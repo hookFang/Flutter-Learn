@@ -19,7 +19,7 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Small Projects Completed So far 
 
-- ##Added a Stopwatch UI to the app
-    ###This uses the [Stopwatch class](https://api.dart.dev/stable/2.10.5/dart-core/Stopwatch-class.html), View [File](https://github.com/hookFang/flutter_learn/blob/master/lib/stopwatch.dart) on the Repo.
+- ## Added a Stopwatch UI to the app
+    ### This uses the [Stopwatch class](https://api.dart.dev/stable/2.10.5/dart-core/Stopwatch-class.html), View [File](https://github.com/hookFang/flutter_learn/blob/master/lib/stopwatch.dart) on the Repo.
   
     ![Alt Text](https://github.com/hookFang/flutter_learn/blob/master/GithubImages/Screenshot_20210203-011808.jpg?raw=true)
