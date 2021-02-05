@@ -18,10 +18,12 @@ class LoginHome extends StatefulWidget {
 
 class _LoginHomeState extends State<LoginHome> {
   final _biggerFont = TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold);
-  final _buttonLoginStyle= TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.black);
-  final _buttonSignUpStyle= TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black);
-  final ButtonStyle _buttonStyle = (OutlinedButton.styleFrom(shape: StadiumBorder(), backgroundColor: Colors.white));
-
+  final _buttonLoginStyle = TextStyle(
+      fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.black);
+  final _buttonSignUpStyle = TextStyle(
+      fontSize: 18.0, fontWeight: FontWeight.bold, color: Colors.black);
+  final ButtonStyle _buttonStyle = (OutlinedButton.styleFrom(
+      shape: StadiumBorder(), backgroundColor: Colors.white));
 
   @override
   Widget build(BuildContext context) {
@@ -34,67 +36,144 @@ class _LoginHomeState extends State<LoginHome> {
   }
 
   Widget _loginPage() {
-    return SingleChildScrollView(
-      child: Container(
-      decoration: BoxDecoration(
+    return Stack(children: <Widget>[
+      Container(
+          decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [Colors.lightBlueAccent, Colors.blueAccent],
             begin: Alignment.topLeft,
             end: Alignment.centerRight),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Center(
-              child: Text(
-            "Login",
-            style: _biggerFont,
-          )),
-          Padding(
-              padding: EdgeInsets.only(left: 50.0, right: 50.0, top: 30.0),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(borderRadius: new BorderRadius.all(new Radius.circular(20.0))), labelText: "E-mail"),
-              )),
-          SizedBox(
-            height: 40,
-          ),
-          Padding(
-              padding: EdgeInsets.only(left: 50.0, right: 50.0),
-              child: TextFormField(
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(borderRadius: new BorderRadius.all(new Radius.circular(20.0))), labelText: "Password"),
-              )),
-          SizedBox(height: 30.0,),
-          SizedBox(
-            width: 200.0, height: 50.0,
-              child: ElevatedButton(
-                style: _buttonStyle,
-                child: Text(
-                  "Login",
-                  style: _buttonLoginStyle,
-                ),
-                onPressed: _loginUser,
-          )),
-          SizedBox(height: 20.0,),
-          SizedBox(
-              width: 150.0, height: 30.0,
-              child: ElevatedButton(
-                style: _buttonStyle,
-                child: Text(
-                  "Sign Up",
-                  style: _buttonSignUpStyle,
-                ),
-                onPressed: _loginUser,
-              )),
-        ],
-      ),
-    )
-    );
+      )),
+      Center(
+        child: SingleChildScrollView(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(height: 20.0,),
+                      Center(
+                          child: Text(
+                        "Login",
+                        style: _biggerFont,
+                      )),
+                      Padding(
+                          padding: EdgeInsets.only(
+                              left: 50.0, right: 50.0, top: 30.0),
+                          child: TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius: new BorderRadius.all(
+                                        new Radius.circular(20.0))),
+                                labelText: "E-mail"),
+                          )),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(left: 50.0, right: 50.0),
+                          child: TextFormField(
+                            obscureText: true,
+                            keyboardType: TextInputType.visiblePassword,
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius: new BorderRadius.all(
+                                        new Radius.circular(20.0))),
+                                labelText: "Password"),
+                          )),
+                      SizedBox(
+                        height: 30.0,
+                      ),
+                      SizedBox(
+                          width: 200.0,
+                          height: 50.0,
+                          child: ElevatedButton(
+                            style: _buttonStyle,
+                            child: Text(
+                              "Login",
+                              style: _buttonLoginStyle,
+                            ),
+                            onPressed: _loginUser,
+                          )),
+                      SizedBox(
+                        height: 20.0,
+                      ),
+                      SizedBox(
+                          width: 150.0,
+                          height: 30.0,
+                          child: ElevatedButton(
+                            style: _buttonStyle,
+                            child: Text(
+                              "Sign Up",
+                              style: _buttonSignUpStyle,
+                            ),
+                            onPressed: _loginUser,
+                          )),
+                      SizedBox(height: 30.0,),
+                    ])),
+      )
+    ]);
+    // SingleChildScrollView(
+    // child: Container(
+    // decoration: BoxDecoration(
+    //   gradient: LinearGradient(
+    //       colors: [Colors.lightBlueAccent, Colors.blueAccent],
+    //       begin: Alignment.topLeft,
+    //       end: Alignment.centerRight),
+    // ),
+    // child: Column(
+    //   mainAxisAlignment: MainAxisAlignment.center,
+    //   crossAxisAlignment: CrossAxisAlignment.stretch,
+    //   children: <Widget>[
+    //     Center(
+    //         child: Text(
+    //       "Login",
+    //       style: _biggerFont,
+    //     )),
+    //     Padding(
+    //         padding: EdgeInsets.only(left: 50.0, right: 50.0, top: 30.0),
+    //         child: TextFormField(
+    //           keyboardType: TextInputType.emailAddress,
+    //           decoration: InputDecoration(
+    //               border: OutlineInputBorder(borderRadius: new BorderRadius.all(new Radius.circular(20.0))), labelText: "E-mail"),
+    //         )),
+    //     SizedBox(
+    //       height: 40,
+    //     ),
+    //     Padding(
+    //         padding: EdgeInsets.only(left: 50.0, right: 50.0),
+    //         child: TextFormField(
+    //           obscureText: true,
+    //           keyboardType: TextInputType.visiblePassword,
+    //           decoration: InputDecoration(
+    //               border: OutlineInputBorder(borderRadius: new BorderRadius.all(new Radius.circular(20.0))), labelText: "Password"),
+    //         )),
+    //     SizedBox(height: 30.0,),
+    //     SizedBox(
+    //       width: 200.0, height: 50.0,
+    //         child: ElevatedButton(
+    //           style: _buttonStyle,
+    //           child: Text(
+    //             "Login",
+    //             style: _buttonLoginStyle,
+    //           ),
+    //           onPressed: _loginUser,
+    //     )),
+    //     SizedBox(height: 20.0,),
+    //     SizedBox(
+    //         width: 150.0, height: 30.0,
+    //         child: ElevatedButton(
+    //           style: _buttonStyle,
+    //           child: Text(
+    //             "Sign Up",
+    //             style: _buttonSignUpStyle,
+    //           ),
+    //           onPressed: _loginUser,
+    //         )),
+    //     ],
+    //   ),
+    // )
+    // );
   }
 
   Future<void> _loginUser() {
